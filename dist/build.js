@@ -39,8 +39,10 @@ function select(v){
   document.body.dataset.model = (v.brand + ' ' + v.model + ' ' + v.gen).trim();
   const route = previewRoutes[v.id];
   let img = '';
-  if (route && v.images && (v.images.front || v.images.rear)) {
-    img = `<img src="${esc(v.images.front || v.images.rear)}" alt="${esc(v.model)} preview" style="width:100%;border-radius:10px;margin-top:12px">`;
+  if (v.images && (v.images.front || v.images.rear)) {
+    const panels = [v.images.front, v.images.rear].filter(Boolean).map(f =>
+      `<img src="${esc(f)}" alt="${esc(v.model)} ${esc(v.brand)} preview" style="width:calc(50% - 5px);border-radius:10px;margin-top:12px;background:#0d0d0e">`).join('');
+    img = `<div style="display:flex;flex-wrap:wrap;gap:10px">${panels}</div>`;
   }
   panel.innerHTML = `
     <div class="no-preview" style="border-style:solid;padding:20px">

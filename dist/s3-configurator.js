@@ -1,8 +1,8 @@
 const canvas=document.querySelector('#car-canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
 const status=document.querySelector('#preview-status'),summary=document.querySelector('.selection');
 const state={paint:'Blue',wheel:'Classic',steering:'Leather',angle:'rear',lip:'standard',diffuser:'standard',exhaust:'round'};
-const files={Classic:'s3-rear.png',Sport:'s3-rear-custom.png',Forged:'s3-rear-custom.png',Track:'s3-rear-custom.png'};
-const fronts={Classic:'s3-front.png',Sport:'s3-front-custom.png',Forged:'s3-front-custom.png',Track:'s3-front-custom.png'};
+const files={Classic:'audi-s3-8v-v2-rear.png'};
+const fronts={Classic:'audi-s3-8v-v2-front.png'};
 const wheelNames={Classic:'Stock 5-twin-spoke',Sport:'HOC black multi-spoke',Forged:'HOC black multi-spoke',Track:'HOC black multi-spoke'};
 const paints={Pink:[242,155,191],Burgundy:[128,39,76],Blue:[32,78,160],Silver:[210,213,220],Graphite:[53,55,62],Rose:[188,139,141]};
 const finishes={Black:[37,38,41],Silver:[185,188,194],Gold:[175,130,49]};
@@ -33,7 +33,7 @@ async function render(){const token=++revision;status.textContent='Updating prev
   
   
  }
- ctx.putImageData(recolor(ctx.getImageData(0,0,canvas.width,canvas.height),kind),0,0);canvas.setAttribute('aria-label',`${state.paint} Audi S3 8V, ${state.angle} preview`);status.textContent=`${kind==='front'?'Front detail':'Rear detail'} · Design preview`;summary.textContent=`${state.paint} · ${wheelNames[state.wheel]} wheels · ${state.steering} steering wheel`;
+ ctx.putImageData(recolor(ctx.getImageData(0,0,canvas.width,canvas.height),kind),0,0);canvas.setAttribute('aria-label',`${state.paint} Audi S3 8V, ${state.angle} preview`);status.textContent=`${kind==='front'?'Front detail':'Rear detail'} · Design preview`;summary.textContent=`${state.paint} · ${wheelNames[state.wheel]} wheels`;
  }catch(e){status.textContent='This preview could not load. Please reload the page.'}}
 
 async function renderSteering(token){
@@ -43,7 +43,7 @@ async function renderSteering(token){
  const h=840,w=h*sw/sh;ctx.drawImage(sheet,index*sw,0,sw,sh,(1774-w)/2,23,w,h);
  canvas.setAttribute('aria-label',state.steering+' steering wheel');
  status.textContent=state.steering+' steering wheel · Design preview';
- summary.textContent=`${state.paint} · ${wheelNames[state.wheel]} wheels · ${state.steering} steering wheel`;
+ summary.textContent=`${state.paint} · ${wheelNames[state.wheel]} wheels`;
 }
 document.querySelector('#steering-finish')?.addEventListener('change',e=>{state.steering=e.target.value;selectAngle('steering');render()});
 
