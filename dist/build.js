@@ -1,7 +1,7 @@
 /* Unified vehicle selector + tune comparison. Data in vehicles.js (HOC_DATA). */
 (() => {
 const data = window.HOC_DATA;
-const sel = document.querySelector('#vehicle-selector');
+const sel = document.querySelector('#vehicle-select');
 const panel = document.querySelector('#vehicle-panel');
 const previewRoutes = {
   'vw-golf-r-mk7': 'golf-r.html#finishes',
@@ -23,20 +23,14 @@ function tuneTable(v){
     <p class="tune-note">*Price observed on the manufacturer page at research time. Region-dependent currency; HOC installation quoted separately. Figures are manufacturer-published for this specific engine/market and depend on your ECU version. ${src}</p>
   </div>`;
 }
-function card(v){
-  const b = document.createElement('button');
-  b.className = 'vehicle-card';
-  b.dataset.id = v.id;
-  const badge = v.status === 'preview' || v.status === 'published'
-    ? '<span class="badge preview">Build preview</span>'
-    : (v.tunes && v.tunes.length ? '<span class="badge">Software data</span>' : '<span class="badge">Coming</span>');
-  b.innerHTML = `<span class="brand">${esc(v.brand)}</span><span class="name">${esc(v.model)} ${esc(v.gen)}</span>
-    <span class="meta">${esc(v.years)}${v.engine ? ' · ' + esc(v.engine) : ''}</span>${badge}`;
-  b.onclick = () => select(v);
-  return b;
+function optionLabel(v){
+  const bits = [`${esc(v.model)} ${esc(v.gen)}`.trim()];
+  if (v.years) bits.push(esc(v.years));
+  if (v.tunes && v.tunes.length) bits.push('tune data');
+  return bits.filter(Boolean).join(' · ');
 }
 function select(v){
-  document.querySelectorAll('.vehicle-card').forEach(c => c.classList.toggle('selected', c.dataset.id === v.id));
+  sel.value = v.id;
   document.body.dataset.model = (v.brand + ' ' + v.model + ' ' + v.gen).trim();
   const route = previewRoutes[v.id];
   let img = '';
@@ -56,7 +50,29 @@ function select(v){
     ${(v.tunes && v.tunes.length) ? `<button class="cta" style="margin-top:14px" data-quote="build">Get a quote for this build ↗</button>` : ''}
   `;
 }
-data.vehicles.forEach(v => sel.append(card(v)));
+const groups = {};
+const order = [];
+data.vehicles.forEach(v => {
+  const b = v.brand;
+  if (!groups[b]) { groups[b] = []; order.push(b); }
+  groups[b].push(v);
+});
+order.sort((a, b) => a.localeCompare(b));
+order.forEach(brand => {
+  const og = document.createElement('optgroup');
+  og.label = brand;
+  groups[brand].forEach(v => {
+    const o = document.createElement('option');
+    o.value = v.id;
+    o.textContent = optionLabel(v);
+    og.append(o);
+  });
+  sel.append(og);
+});
+sel.addEventListener('change', () => {
+  const v = data.vehicles.find(x => x.id === sel.value);
+  if (v) select(v);
+});
 // default: S3 (the new one)
 const s3 = data.vehicles.find(v => v.id === 'audi-s3-8v');
 if (s3) select(s3);
