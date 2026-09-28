@@ -1,0 +1,14 @@
+#model-art{aspect-ratio:2/1;overflow:visible}
+#car-canvas{width:103%;height:auto;position:relative;z-index:1;display:block;left:-2%;filter:drop-shadow(0 15px 20px #0008)}
+.configuration{align-items:start;padding-top:45px}
+.configuration>.model{position:sticky;top:40px;padding-top:40px}
+.angle-controls{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.angle-controls button{padding:9px 20px;background:#171217;border:1px solid #51414c;border-radius:25px;font-size:13px}
+.angle-controls button.selected{border-color:#ed9fc7;background:#422436;color:#fff}
+#preview-status{font-size:12px;text-align:center;color:#a798a2;min-height:18px}
+.config-grid{grid-template-columns:1fr!important}.models{display:none}.options{display:grid;grid-template-columns:1fr 1fr;gap:20px}.options fieldset{margin-bottom:15px}.options details{margin-bottom:10px}
+.accessory-controls{display:grid;grid-template-columns:1fr;gap:4px;margin-top:25px}.accessory-controls label{text-transform:uppercase;font-size:12px;letter-spacing:.04em;margin-top:12px}.accessory-controls select{margin-top:4px;border-radius:5px}
+.config{padding-right:35px;padding-left:25px}.config h2{margin-bottom:25px}.compact{margin-top:25px}
+@media(max-width:700px){.configuration>.model{position:relative;top:auto;padding-top:0}.config{padding:10px 8% 35px}.options{gap:24px}.configuration{padding-top:15px}.configuration>.model{padding-bottom:20px}}
+
+@media(max-width:700px){#car-canvas{width:100%;left:0}.options{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.swatches{grid-template-columns:repeat(4,30px)}.swatch{width:30px;height:30px}}

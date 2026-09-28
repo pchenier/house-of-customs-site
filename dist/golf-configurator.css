@@ -1,0 +1,11 @@
+.golf-page .configuration{margin-bottom:80px;min-height:720px}
+.golf-page .wheel,.golf-page .wheel.w2,.golf-page .wheel.w3,.golf-page .wheel.w4{background-image:url('golf-rear.png');background-size:650%;background-position:47.3% 85.4%;filter:none}
+.golf-page .wheel.w2{background-image:url('golf-rear-split.png')}
+.golf-page .wheel.w3{background-image:url('golf-rear-mesh.png')}
+.golf-page .wheel.w4{background-image:url('golf-rear-six.png')}
+.golf-page .wheel.selected,.golf-page .swatch.selected{outline-color:#89adff}
+.golf-page .angle-controls button.selected{background:#1c3158;border-color:#89adff}
+.golf-page .model-art{background:radial-gradient(ellipse at 50% 68%,#16366966,transparent 64%)}
+.golf-page .selection{color:#91ade1;line-height:1.6}
+.golf-page .configuration .config h2{font-size:18px;margin:0 0 25px}
+@media(max-width:700px){.golf-page .configuration{min-height:0;margin-bottom:30px}.golf-page .configuration>.model{padding-bottom:30px}}

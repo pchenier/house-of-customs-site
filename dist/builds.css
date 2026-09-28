@@ -1,0 +1,45 @@
+.build-switch{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin:28px 5% 5px;border-bottom:1px solid #383037;padding-bottom:20px;flex-wrap:wrap}
+.build-switch a{font-size:14px;border:1px solid #41383f;border-radius:30px;padding:11px 18px;text-transform:none;letter-spacing:0}
+.build-switch a span{color:#8c8289;margin-right:10px;font-size:12px}
+.build-switch a.current{background:#2c1b25;border-color:#d783ac;color:#fff}
+.build-switch p{margin-left:auto;color:#8f838b;letter-spacing:.1em;font-size:10px}
+.golf-page{--pink:#6c96ff}
+.golf-page .hero-art,.golf-page .signature-art{background:radial-gradient(ellipse at 50% 70%,#0c276275,transparent 65%)}
+.golf-page .display-title{background:linear-gradient(#719dff,#183475);background-clip:text;-webkit-background-clip:text}
+.golf-page .hero-art .display-title{font-size:clamp(70px,22vw,285px)}
+.golf-page .hero-art img{height:88%;width:76%;left:12%;bottom:-9%}
+.golf-page .build-switch a.current{background:#15233f;border-color:#6c96ff}
+.golf-page .actions a:hover{background:#16213b}
+.design-stats strong{font-size:24px}
+.build-story{display:grid;grid-template-columns:40% 60%;align-items:center;gap:15px;padding:75px 5% 45px;overflow:hidden}
+.build-kicker{font-size:12px;letter-spacing:.15em;color:#83a8ff}
+.build-story h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4.2vw,56px);line-height:1.05;margin:22px 0;letter-spacing:-.02em}
+.build-story p:not(.build-kicker){font-size:16px;line-height:1.8;color:#aaa;max-width:430px}
+.detail-photo img{display:block;width:110%;max-width:none;filter:drop-shadow(0 20px 20px #0006)}
+.golf-config{display:grid;grid-template-columns:58% 42%;padding:50px 0 80px;align-items:center}
+.golf-preview{position:relative;isolation:isolate;min-height:390px;display:flex;align-items:center;background:radial-gradient(ellipse at center,#142d6166,transparent 70%)}
+.golf-preview .display-title{font-size:180px;top:0;transform:scaleY(1.25)}
+.golf-preview>img{width:100%;position:relative;transition:filter .3s}
+.view-switch{display:flex;gap:6px;position:absolute;bottom:0;left:50%;transform:translateX(-50%);padding:5px;border:1px solid #39414e;border-radius:30px;background:#12161c}
+.view-switch button{border:0;background:transparent;padding:8px 22px;border-radius:22px;font-size:13px;color:#acb2bf}
+.view-switch .selected{background:#2b4168;color:#fff}
+.golf-options{padding:0 12% 0 9%}
+.golf-options h2{font-size:29px;line-height:1.2;letter-spacing:-.035em;margin:20px 0 35px}
+.golf-options fieldset{margin-bottom:30px}
+.golf-colors{display:flex;gap:20px}
+.golf-colors button{border:0;background:none;padding:4px 0;font-size:12px;color:#aaa}
+.golf-colors i{display:block;width:36px;height:36px;border-radius:50%;background:var(--swatch);margin:0 auto 12px;border:1px solid #ffffff25}
+.golf-colors button.selected i{outline:2px solid #87a9fa;outline-offset:4px}
+.golf-colors button.selected{color:#fff}
+.build-details{font-size:13px;line-height:1.6}
+.build-details div{gap:15px;border-color:#2e343d;padding:13px 0}
+.build-details dt{color:#8c96a5}
+.build-details dd{text-align:right}
+.golf-selection{font-size:12px;color:#88a8ed;margin-top:25px}
+.next-build{margin:15px 5% 45px;border-top:1px solid #333;border-bottom:1px solid #333;padding:28px 0;display:flex;align-items:center;gap:25px}
+.next-build>span{font-size:12px;color:#8f94a0;letter-spacing:.08em}
+.next-build strong{font-size:28px;letter-spacing:-.03em}
+.next-build>span:last-child{font-size:30px;margin-left:auto;color:#ddd}
+@media(max-width:700px){.build-switch{gap:8px;margin-top:25px}.build-switch a{font-size:12px;padding:10px 13px}.build-switch p{width:100%;margin:8px 0 0;font-size:9px}.golf-page .hero-art .display-title{font-size:24vw}.design-stats{gap:25px}.design-stats strong{font-size:17px}.build-story{grid-template-columns:1fr;padding:50px 7% 15px;gap:0}.build-story h2{font-size:40px}.detail-photo img{width:100%}.golf-config{grid-template-columns:1fr;padding:0 0 30px;gap:35px}.golf-preview{min-height:290px}.golf-preview .display-title{font-size:140px}.golf-options{padding:0 8%}.golf-colors{gap:30px}.golf-options h2{margin-top:15px}.next-build{flex-wrap:wrap;gap:15px}.next-build>span:first-child{width:100%}.next-build strong{font-size:23px}}
+
+.golf-preview>canvas{width:100%;height:auto;position:relative}

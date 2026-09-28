@@ -1,0 +1,24 @@
+@font-face{font-family:Anton;src:url('anton.ttf') format('truetype');font-display:swap}
+/* Separate full-resolution vehicle assets and browser-rendered typography. */
+.hero-art,.model-art,.signature-art{isolation:isolate;background:radial-gradient(ellipse at 50% 68%,#45001f75 0,transparent 64%)}
+.display-title{position:absolute;z-index:-1;top:5%;left:0;width:100%;text-align:center;font-family:Anton,Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(70px,18vw,230px);font-weight:400;line-height:1;letter-spacing:-.055em;color:#e27caa;background:linear-gradient(#f391bf,#a33868);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;transform:scaleX(1.05) scaleY(1.42);transform-origin:50% 0;white-space:nowrap}
+.hero-art img{width:72%;height:82%;object-fit:contain;left:14%;top:auto;bottom:-3%;filter:drop-shadow(0 20px 25px #0008)}
+.rear-art{background:linear-gradient(#111,#191719 35%,#111);display:flex;align-items:center;overflow:hidden}
+.rear-art img{height:100%;object-fit:contain;top:0;max-width:none}
+.rear-art .rear-straight{width:55%;left:-7%}
+.rear-art .rear-angle{width:58%;left:61%}
+.model-art .display-title{font-size:clamp(65px,14vw,180px);top:4%;transform:scaleX(.95) scaleY(1.65)}
+.model-art img{width:103%;height:85%;object-fit:contain;left:-2%;top:auto;bottom:-2%;filter:drop-shadow(0 15px 20px #0009)}
+.signature-art .display-title{font-size:clamp(65px,23vw,295px);top:7%;transform:scaleX(.94) scaleY(1.3)}
+.signature-art img{width:76%;height:96%;object-fit:contain;top:auto;bottom:-8%;left:12%;filter:drop-shadow(0 20px 20px #000b)}
+.signature-art:after{content:'';position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#111);pointer-events:none}
+.thumb,.thumb.second,.thumb.third{background-image:url('porsche-front.png');background-size:contain;background-position:center;background-repeat:no-repeat}
+.thumb.second{filter:grayscale(1)}
+.thumb.third{filter:hue-rotate(150deg)}
+.wheel,.wheel.w2,.wheel.w3,.wheel.w4{background-image:url('porsche-front.png');background-size:680%;background-position:44.5% 70%;background-color:#161416}
+.wheel.w2{filter:brightness(1.5) grayscale(1)}
+.wheel.w3{filter:sepia(.8) brightness(1.2)}
+.wheel.w4{filter:grayscale(1) brightness(.7)}
+@media(max-width:700px){.hero-art .display-title{font-size:18.3vw}.model-art .display-title{font-size:25vw;transform:scaleX(.95) scaleY(1.65)}.signature-art .display-title{font-size:23vw}.hero-art img{width:80%;left:10%;bottom:-5%}.model-art img{height:85%}.config-grid{gap:18px}.config{overflow:hidden}.swatches{grid-template-columns:repeat(4,minmax(0,35px))}}
+
+.rear-art .rear-straight{mask-image:linear-gradient(90deg,#000 75%,transparent),linear-gradient(0deg,transparent,#000 12% 86%,transparent);mask-composite:intersect;object-fit:cover;object-position:center}

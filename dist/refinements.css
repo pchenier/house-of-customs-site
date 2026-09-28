@@ -1,0 +1,22 @@
+@font-face{font-family:Manrope;src:url('manrope-regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('manrope-bold.ttf') format('truetype');font-weight:600 900;font-display:swap}
+@font-face{font-family:'Barlow Condensed';src:url('barlow-condensed-bold.ttf') format('truetype');font-weight:700;font-display:swap}
+body{font-family:Manrope,Arial,sans-serif}
+.display-title{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;letter-spacing:-.025em;transform:scaleX(1.06) scaleY(1.35)}
+.model-art .display-title{transform:scaleX(.95) scaleY(1.5)}
+.signature-art .display-title{transform:scaleX(.88) scaleY(1.22)}
+.logo{font-family:Manrope,Arial,sans-serif;font-style:normal;letter-spacing:5px;font-weight:800;transform:scaleX(1.12)}
+nav a,legend,details{font-size:14px;font-weight:600;letter-spacing:.025em}
+.actions a,.actions button{font-size:13px}
+.stats strong{font-weight:600;letter-spacing:-.04em}
+.config h2{font-weight:600;letter-spacing:.02em}
+.model-choice small,.selection{font-size:13px;line-height:1.5}
+.wheel,.wheel.w2,.wheel.w3,.wheel.w4{background-image:url('porsche-quarter.png');background-size:650%;background-position:41% 76%;filter:none;transition:box-shadow .15s,transform .15s}
+.wheel.w2{background-image:url('porsche-sport.png')}
+.wheel.w3{background-image:url('porsche-forged.png')}
+.wheel.w4{background-image:url('porsche-track.png')}
+.wheel:hover{transform:scale(1.06)}
+.wheel.selected{outline:2px solid #f594c6;outline-offset:3px;box-shadow:0 0 18px #e680ac33}
+.wheels{gap:10px}
+.wheel-field{margin-bottom:32px}
+@media(max-width:700px){nav a{font-size:12px}nav{row-gap:15px}.actions a,.actions button{font-size:12px}.config-grid{grid-template-columns:minmax(0,35%) minmax(0,65%);gap:12px}.model-art .display-title{transform:scaleX(.95) scaleY(1.5)}legend,details{font-size:13px}.wheels{grid-template-columns:repeat(3,44px);gap:9px}.wheel{width:44px;height:44px}.selection{font-size:12px}}
