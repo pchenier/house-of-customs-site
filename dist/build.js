@@ -8,6 +8,7 @@ const previewRoutes = {
   'porsche-911': 'porsche-911.html#configurator',
   'audi-s3-8v': 'audi-s3.html#configurator'
 };
+data.vehicles.forEach(v => { if(!previewRoutes[v.id] && v.images && v.images.front) previewRoutes[v.id] = v.id + '.html#configurator'; });
 function esc(s){return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function tuneTable(v){
   if(!v.tunes || !v.tunes.length) return '';
