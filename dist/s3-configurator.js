@@ -49,7 +49,7 @@ document.querySelector('#steering-finish')?.addEventListener('change',e=>{state.
 
 function selectAngle(angle){state.angle=angle;document.querySelectorAll('[data-angle]').forEach(b=>{b.classList.toggle('selected',b.dataset.angle===angle);b.setAttribute('aria-pressed',String(b.dataset.angle===angle))})}
 document.querySelectorAll('.swatch').forEach(b=>b.addEventListener('click',()=>{state.paint=b.dataset.color;if(state.angle==='steering')selectAngle('rear');document.querySelectorAll('.swatch').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));
-document.querySelectorAll('.wheel').forEach(b=>b.addEventListener('click',()=>{state.wheel=b.dataset.wheel;selectAngle('rear');document.querySelectorAll('.wheel').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));
+
 document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>{selectAngle(b.dataset.angle);render()}));
-const kit=document.querySelector('#hoc-kit');if(kit)kit.addEventListener('change',e=>{state.wheel=e.target.value==='hoc'?'Sport':'Classic';document.querySelectorAll('.wheel').forEach(x=>{x.classList.toggle('selected',x.dataset.wheel===state.wheel);x.setAttribute('aria-pressed',String(x.dataset.wheel===state.wheel))});selectAngle('rear');render()});
+
 render();
