@@ -222,36 +222,6 @@ window.HOC_DATA = {
    "tunes": []
   },
   {
-   "id": "mb-cla-c118-2",
-   "brand": "Mercedes-Benz",
-   "model": "CLA",
-   "gen": "C118 AMG Line",
-   "years": "2020\u20132023",
-   "engine": "2.0 turbo",
-   "body": "",
-   "status": "preview",
-   "images": {
-    "front": "mb-cla-c118-2-front.png",
-    "rear": "mb-cla-c118-2-rear.png"
-   },
-   "tunes": []
-  },
-  {
-   "id": "mb-e-w213-2",
-   "brand": "Mercedes-Benz",
-   "model": "E-Class",
-   "gen": "W213 AMG Line",
-   "years": "2017\u20132023",
-   "engine": "3.0 I6 turbo",
-   "body": "",
-   "status": "preview",
-   "images": {
-    "front": "mb-e-w213-2-front.png",
-    "rear": "mb-e-w213-2-rear.png"
-   },
-   "tunes": []
-  },
-  {
    "id": "mb-c-w206",
    "brand": "Mercedes-Benz",
    "model": "C-Class",
@@ -278,21 +248,6 @@ window.HOC_DATA = {
    "images": {
     "front": "mb-c-w205-front.png",
     "rear": "mb-c-w205-rear.png"
-   },
-   "tunes": []
-  },
-  {
-   "id": "mb-c-w205-2",
-   "brand": "Mercedes-Benz",
-   "model": "C-Class",
-   "gen": "W205 AMG Line",
-   "years": "2015\u20132021",
-   "engine": "2.0 turbo",
-   "body": "",
-   "status": "preview",
-   "images": {
-    "front": "mb-c-w205-2-front.png",
-    "rear": "mb-c-w205-2-rear.png"
    },
    "tunes": []
   },
@@ -563,21 +518,6 @@ window.HOC_DATA = {
    "images": {
     "front": "audi-rs5-b9-front.png",
     "rear": "audi-rs5-b9-rear.png"
-   },
-   "tunes": []
-  },
-  {
-   "id": "mb-g-class-w463-2",
-   "brand": "Mercedes-Benz",
-   "model": "G-Class",
-   "gen": "W463 G550",
-   "years": "2019\u20132025",
-   "engine": "4.0 V8 biturbo",
-   "body": "",
-   "status": "preview",
-   "images": {
-    "front": "mb-g-class-w463-2-front.png",
-    "rear": "mb-g-class-w463-2-rear.png"
    },
    "tunes": []
   }

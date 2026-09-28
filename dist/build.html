@@ -1,12 +1,19 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build Your Car | HOC</title><meta name="description" content="Select your vehicle, preview wraps and parts, compare verified Unitronic software options, and prepare your HOC quote."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111111'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-weight='900' font-size='23' fill='%23f97316'%3EHOC%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css?v=3"><link rel="stylesheet" href="sharp-images.css?v=3"><link rel="stylesheet" href="refinements.css?v=3"><link rel="stylesheet" href="builds.css?v=4"><link rel="stylesheet" href="configurator.css?v=7"><link rel="stylesheet" href="garage.css?v=2"><style>
-.vehicle-picker{display:flex;align-items:center;gap:14px;margin:18px 0;flex-wrap:wrap}
-.picker-label{color:#888;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-#vehicle-select{flex:1;min-width:260px;min-height:52px;background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f97316' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 18px center;border:1px solid #2a2a2a;border-radius:10px;color:#eee;font:inherit;font-size:16px;padding:12px 44px 12px 16px;appearance:none;-webkit-appearance:none;cursor:pointer}
-#vehicle-select:hover{border-color:#f97316}
-#vehicle-select:focus-visible{outline:2px solid #f97316;outline-offset:2px}
-#vehicle-select optgroup{color:#777;font-style:normal}
-#vehicle-select option{background:#141414;color:#eee;padding:10px}
+.finder{display:flex;align-items:center;gap:10px;margin:22px 0;flex-wrap:nowrap;position:relative;padding:18px;background:linear-gradient(115deg,#1a1208 0%,#141414 38%,#101010 100%);border:1px solid #2a2a2a;border-radius:2px}
+.finder:before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(249,115,22,.09) 0%,transparent 30%),linear-gradient(245deg,rgba(249,115,22,.05) 0%,transparent 45%);pointer-events:none}
+.finder select{flex:1 1 170px;min-height:54px;background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23eee' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 16px center;border:1px solid #555;color:#eee;font:inherit;font-weight:700;letter-spacing:.06em;font-size:14px;padding:12px 40px 12px 16px;appearance:none;-webkit-appearance:none;border-radius:2px;cursor:pointer;text-transform:uppercase}
+.finder select:enabled:hover{border-color:#fff}
+.finder select:disabled{color:#666;border-color:#333;cursor:not-allowed;background-image:none}
+.finder select:focus-visible{outline:2px solid #f97316;outline-offset:2px}
+.finder option{background:#141414;color:#eee;text-transform:none;letter-spacing:0;font-weight:400}
+.finder-go,.finder-reset{min-width:78px;height:54px;border:0;border-radius:2px;font:inherit;font-weight:800;letter-spacing:.12em;font-size:14px;cursor:pointer;text-transform:uppercase}
+.finder-go{background:#f97316;color:#111}
+.finder-go:disabled{background:#3a3a3a;color:#777;cursor:not-allowed}
+.finder-go:enabled:hover{background:#fb923c}
+.finder-reset{background:#262626;color:#eee;border:1px solid #444}
+.finder-reset:hover{border-color:#888}
+@media(max-width:700px){.finder{flex-wrap:wrap;gap:8px;padding:12px}.finder select{flex:1 1 100%}.finder-go,.finder-reset{flex:1 1 40%}}
 
 
 
@@ -32,12 +39,16 @@
 </style></head>
 <body class="garage-site" data-model=""><header id="top" class="garage-header"><a class="logo" href="index.html" aria-label="House of Customs home">HOC<span>HOUSE OF CUSTOMS</span></a><nav aria-label="Main navigation"><a href="index.html#services">The garage</a><a href="build.html">Build your car</a><a href="shop.html">Shop parts</a></nav><button class="cta" data-quote>Get a quote ↗</button></header>
 <main><section class="builder-intro"><p class="kicker">VISUAL BUILD STUDIO</p><h1>PICK YOUR CAR.<br>BUILD IT YOUR WAY.</h1><p>Select your vehicle. Preview wraps, wheels and parts where available. Compare verified software options for your exact engine.</p></section>
-<section class="configuration section-pad" id="configurator" style="padding-left:5%;padding-right:5%">
-<div class="vehicle-picker">
-<label class="picker-label" for="vehicle-select">Choose your vehicle</label>
-<select id="vehicle-select" aria-label="Vehicle selection"></select>
+<section class="configuration section-pad" id="configurator" style="padding-left:5%;padding-right:5%;display:block">
+<div class="finder" id="finder" role="group" aria-label="Find your vehicle">
+<select id="f-make" aria-label="Make"></select>
+<select id="f-year" aria-label="Year" disabled></select>
+<select id="f-model" aria-label="Model" disabled></select>
+<select id="f-engine" aria-label="Engine" disabled></select>
+<button class="finder-go" id="finder-go" disabled>GO</button>
+<button class="finder-reset" id="finder-reset">RESET</button>
 </div>
-<div id="vehicle-panel"></div>
+<div id="vehicle-panel" style="margin-top:26px"></div>
 </section></main>
 <section class="closing"><p class="kicker">YOUR NEXT BUILD STARTS HERE</p><h2>MAKE IT<br>YOUR OWN.</h2><button class="cta" data-quote>Get a quote ↗</button><a href="shop.html" class="text-link">Explore parts →</a></section>
 <footer><a class="logo" href="index.html">HOC</a><p>HOUSE OF CUSTOMS<br>Built around your vision.</p><a href="build.html">Build your car</a><a href="shop.html">Shop parts</a><button class="text-link" data-quote>Get a quote ↗</button></footer>
